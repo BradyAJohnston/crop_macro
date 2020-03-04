@@ -11,7 +11,7 @@ Needing to process large amounts of .nd2 images, I created this macro to save a 
 
 It’s a simple one, but it now saves a lot of time to batch-process a large number of images with different crop location requirements, but the same-formatted result.
 
-```
+```java
 // Quick cropping of images for my friend Yee-seng 
 
 //////////////////////////////////////////////////////////////////////////////////////////
