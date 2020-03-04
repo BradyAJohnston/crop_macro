@@ -40,39 +40,20 @@ waitForUser("Move box to your selection and press OK to crop.");
 //crops at the box
 run("Crop");
 
-// gets metadata from the current image for sizing
-
-getPixelSize(unit, pixelWidth, pixelHeight);
-
-//calculates the length of the line (to equal 5 um)
-len = 5/pixelWidth;
-
+//sets directory and gets file name for saving new .jpg file
 dir = File.directory;
 name = getTitle();
 
-//saves the composite image and closes what is open.
+//adds scale bar to image with width = 5 um and height = 5 px. Font=0 means no text is present. 
+// "overlay" ensures the scale bar is white and on-top of all layers rather than coloured to 
+// a channels assigned colour
+
 run("Scale Bar...", "width=5 height=5 font=0 color=White background=None location=[Lower Left] overlay");
+
+//saves the composite image and closes what is open.
 save(dir + name + "_cropped" + ".jpg");
+
+
 close();
-//ff
-//opens the new jpg to add on the scale bar.
-//open(dir + name + "_cropped.jpg");
 
-//sets colour and dimension for the scale bar
-//setColor("white");
-//setLineWidth(5);
-
-//run("Scale Bar...", "width=10 height=4 font=12 color=white background=None location=[Lower Left] overlay");
-
-
-//draws the scale bar
-//drawLine(20, 580, 20+len, 580);
-//drawRect(20, 580, len, 5);
-
-//saves and closes the final image, overwriting the previous jpg
-//save(dir + name + "_cropped" + ".jpg");
-
-//close();
-
-}
 //////////////////////////////////////////////////////////////////////////////////////////
